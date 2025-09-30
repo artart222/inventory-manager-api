@@ -3,14 +3,10 @@
 
 import decimal
 
-# TODO: For now keep uuid.
-# Check if it's good idea to use uuid.
-import uuid
-
 
 class ProductBase:
     def __init__(self) -> None:
-        self.product_id: int | uuid.UUID = 0
+        self.product_id: int = 0
         self.name: str = ""
         self.description: str = ""
         self.price: decimal.Decimal = decimal.Decimal(0.00)
@@ -31,20 +27,14 @@ class Product(ProductBase):
             if kwargs.get("product_id") is not None
             else self.product_id
         )
-        self.name = (
-            kwargs.get("name")
-            if kwargs.get("name") is not None
-            else self.name
-        )
+        self.name = kwargs.get("name") if kwargs.get("name") is not None else self.name
         self.description = (
             kwargs.get("description")
             if kwargs.get("description") is not None
             else self.description
         )
         self.price = (
-            kwargs.get("price")
-            if kwargs.get("price") is not None
-            else self.price
+            kwargs.get("price") if kwargs.get("price") is not None else self.price
         )
         self.quantity = (
             kwargs.get("quantity")
