@@ -17,14 +17,14 @@ class DataBase:
         )
         self.__init_table()
 
-    def add_product(self, name, description, price, quantity):
+    def add_product(self, name, description, price, quantity, product_id=None):
         try:
             with self.db_connection_pool.connection() as conn, conn.cursor() as cursor:
                 # TODO: There should be better way to put these values
                 # in correct order. ths is just by order, I should do something
                 # to do thing like this VALUES(product_id=id, ...)
                 cursor.execute(
-                    "INSERT INTO product (name, description, price, quantity) VALUES(%s,%s,%s, %s, %s) RETURNING *",
+                    "INSERT INTO product (name, description, price, quantity) VALUES(%s,%s,%s, %s) RETURNING *",
                     (name, description, price, quantity),
                 )
 
