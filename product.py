@@ -42,7 +42,9 @@ class Product(ProductBase):
             else self.quantity
         )
 
-    def set_product_details(self, name=None, product_id=None, description=None, price=None, quantity=None):
+    def set_product_details(
+        self, name=None, product_id=None, description=None, price=None, quantity=None
+    ):
         if name is not None:
             self.name = name
         if product_id is not None:
