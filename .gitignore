@@ -14,4 +14,6 @@ __pycache__/
 .idea
 
 # Django migrations
-products/migrations
+*/migrations/*.py[cod]
+*/migrations/__pycache__/
+!*/migrations/__init__.py
