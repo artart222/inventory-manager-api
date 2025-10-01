@@ -61,9 +61,9 @@ inventory-manager-api/
 ├── .env # Environment variables (ignored in git)
 ├── .gitignore
 ├── ARCHITECTURE.md
-├──  db.py
-├──  product.py
-├──  main.py
+├── db.py
+├── product.py
+├── main.py
 ├── requirements.txt
 └── README.md
 ```
