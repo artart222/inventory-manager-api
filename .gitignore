@@ -9,3 +9,9 @@ __pycache__/
 
 # DataBase settings
 .env
+
+# Pycharm settings.
+.idea
+
+# Django migrations
+products/migrations
